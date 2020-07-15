@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Ex07Principal {
 	public static void main(String[] args) {
 		Ex07Produto pr;
-		int op;
+		int opcao;
 		int codigo;
 		String descricao;
 		double valor;
@@ -15,30 +15,30 @@ public class Ex07Principal {
 		String cor;
 
 		for (;;) {
-			op = Integer.parseInt(JOptionPane.showInputDialog(
-					"Escolha a opcao de cadastro:\n1 - Alimento\n2 - Eletrodomestico\n3 - Roupa\n4 - Sair"));
-			if (op == 4) {
+			opcao = Integer.parseInt(JOptionPane.showInputDialog(
+					"Escolha a opção de cadastro:\n1 - Alimento\n2 - Eletrodoméstico\n3 - Roupa\n4 - Sair"));
+			if (opcao == 4) {
 				break;
 			}
 
-			codigo = Integer.parseInt(JOptionPane.showInputDialog("Qual o codigo do produto:"));
-			descricao = String.valueOf(JOptionPane.showInputDialog("Qual a descricao do produto: "));
+			codigo = Integer.parseInt(JOptionPane.showInputDialog("Qual o código do produto:"));
+			descricao = String.valueOf(JOptionPane.showInputDialog("Qual a descrição do produto: "));
 			valor = Double.parseDouble(JOptionPane.showInputDialog("Qual o valor do produto:"));
 
-			if (op == 1) {
+			if (opcao == 1) {
 				tipo = String.valueOf(JOptionPane.showInputDialog("Qual o tipo de alimento: "));
 				pr = new Ex07Alimento(codigo, descricao, valor, tipo);
 				pr.imprime();
-			} else if (op == 2) {
+			} else if (opcao == 2) {
 				voltagem = Double.parseDouble(JOptionPane.showInputDialog("Qual a voltagem do produto:"));
 				pr = new Ex07Eletrodomestico(codigo, descricao, valor, voltagem);
 				pr.imprime();
-			} else if (op == 3) {
+			} else if (opcao == 3) {
 				tamanho = String.valueOf(JOptionPane.showInputDialog("Qual o tamanho do produto: "));
 				cor = String.valueOf(JOptionPane.showInputDialog("Qual a cor do produto: "));
 				pr = new Ex07Roupa(codigo, descricao, valor, tamanho, cor);
 				pr.imprime();
-			} else if (op == 4) {
+			} else if (opcao == 4) {
 				break;
 			}
 		}
